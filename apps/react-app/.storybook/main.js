@@ -3,7 +3,16 @@ const rootMain = require('../../../.storybook/main');
 module.exports = {
   ...rootMain,
 
-  core: { ...rootMain.core, builder: 'webpack5' },
+  core: {
+    ...rootMain.core,
+    builder: {
+      name: 'webpack5',
+      options: {
+        lazyCompilation: true,
+        fsCache: true,
+      },
+    },
+  },
 
   stories: [
     ...rootMain.stories,
@@ -11,6 +20,9 @@ module.exports = {
     '../src/app/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [...rootMain.addons, '@nrwl/react/plugins/storybook'],
+  features: {
+    storyStoreV7: true,
+  },
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {
