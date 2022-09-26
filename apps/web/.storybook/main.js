@@ -14,8 +14,6 @@ module.exports = {
   ],
   addons: [
     ...rootMain.addons,
-    '@nrwl/react/plugins/storybook',
-
     'storybook-addon-swc',
     {
       name: 'storybook-addon-next',
