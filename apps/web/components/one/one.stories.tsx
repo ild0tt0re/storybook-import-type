@@ -1,12 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { One } from './one';
+import type { Story, Meta } from '@storybook/react';
 
-export default {
+import { One } from './one';
+const StoryMeta: Meta = {
   component: One,
   title: 'One',
-} as ComponentMeta<typeof One>;
+};
 
-const Template: ComponentStory<typeof One> = (args) => <One {...args} />;
-
+const Template: Story = (args) => <One {...args} />;
+export default StoryMeta;
 export const Primary = Template.bind({});
 Primary.args = {};
