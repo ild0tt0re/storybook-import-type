@@ -1,0 +1,35 @@
+{
+  "presets": [
+    [
+      "@nrwl/react/babel",
+      {
+        "runtime": "automatic",
+        "useBuiltIns": "usage"
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "pure": true,
+        "ssr": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "pure": true,
+            "ssr": false,
+            "namespace": "sc",
+            "displayName": false
+          }
+        ]
+      ]
+    }
+  }
+}
